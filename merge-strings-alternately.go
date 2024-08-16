@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	output := mergeAlternately("abcd", "pq")
+	output := mergeAlternately("abcd", "paq")
 	fmt.Println("val", output)
 }
 

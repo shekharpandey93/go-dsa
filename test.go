@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.ibm.com/MCMP-Development/go-utils/pkg/misc"
 	"sync"
 )
 
@@ -52,20 +51,20 @@ func printMyVal(c chan int, wg *sync.WaitGroup) {
 	}
 }
 
-func removeArray() {
-
-	mapDat := make(map[int]string)
-
-	iteam := []string{"cred1", "cred1", "cred2", "cred1"}
-	removeIteam := []string{"cred1"}
-	for index, val := range iteam {
-		misc.DumpObject()
-		if misc.StringInSlice(val, removeIteam) {
-			mapDat[index] = val
-		}
-		for _, val := range mapDat {
-			misc.RemoveStringFromSlice(val, iteam)
-		}
-
-	}
-}
+//func removeArray() {
+//
+//	mapDat := make(map[int]string)
+//
+//	iteam := []string{"cred1", "cred1", "cred2", "cred1"}
+//	removeIteam := []string{"cred1"}
+//	for index, val := range iteam {
+//		misc.DumpObject()
+//		if misc.StringInSlice(val, removeIteam) {
+//			mapDat[index] = val
+//		}
+//		for _, val := range mapDat {
+//			misc.RemoveStringFromSlice(val, iteam)
+//		}
+//
+//	}
+//}

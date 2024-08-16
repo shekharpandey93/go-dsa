@@ -5,27 +5,27 @@ import (
 	"math"
 )
 
-func main()  {
+func main() {
 	// Sort array after converting elements to their squares
-	arr := []int{ -5, -3, -1, 2, 4, 6 } // 1,4,9,16,25,36
+	arr := []int{-5, -3, -1, 2, 4, 6} // 1,4,9,16,25,36
 	squareAndSort(arr)
 }
 
-func squareAndSort(arr []int)  {
+func squareAndSort(arr []int) {
 	left := 0
 	right := len(arr) - 1
 	var temp []int
 	//
 	for index := len(arr) - 1; index >= 0; index-- {
-		if (math.Abs(float64(arr[left])) > float64(arr[right])) {
-			temp = append(temp, arr[left] * arr[left])
-			fmt.Println("=====temp====",temp)
-			left ++
+		if math.Abs(float64(arr[left])) > float64(arr[right]) {
+			temp = append(temp, arr[left]*arr[left])
+			fmt.Println("=====temp====", temp)
+			left++
 		} else {
-			temp = append(temp, arr[right] * arr[right])
-			fmt.Println("=====temp1111====",temp)
-			right --
-		 }
+			temp = append(temp, arr[right]*arr[right])
+			fmt.Println("=====temp1111====", temp)
+			right--
+		}
 	}
 
 	//var i int
@@ -63,5 +63,3 @@ func squareAndSort(arr []int)  {
 	fmt.Println("iiiiii", temp)
 
 }
-
-

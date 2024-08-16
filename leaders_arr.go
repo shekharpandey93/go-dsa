@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	getLeaders([]int{7, 10, 4, 10, 6, 5, 2})
 }
@@ -14,4 +16,5 @@ func getLeaders(arr []int) {
 			leaderArr = append(leaderArr, leader)
 		}
 	}
+	fmt.Println(leaderArr)
 }

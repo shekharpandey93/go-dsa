@@ -2,43 +2,26 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-//[2,3,1,1,4]
-//[3,2,1,0,4]
-//[3,1,2,0,4]
-func main()  {
-	arr := []int{1, 3, 6, 1, 0, 9}
+// [2,3,1,1,4]
+// [3,2,1,0,4]
+// [3,1,2,0,4]
+func main() {
+	arr := []int{3, 1, 2, 0, 4}
 	a := getMinimumJump(arr)
 	fmt.Println(a)
 }
 
-func getMinimumJump(arr []int) int {
+func getMinimumJump(arr []int) bool {
 
-	jump := make([]int, len(arr))
-	var i int, var j int
-	if (len(arr) == 0 || arr[0] == 0) {
-		
-	}
-
-	if len(arr) <=1 {
-		return 0
-	}
-
-	currMaxReach := arr[0]
-	stepCount := arr[0]
-	jump := 0
-
-	for start := 1; start < len(arr) -1; start = start +1 {
-		currMaxReach = int(math.Max(float64(currMaxReach), float64(start+ arr[start])))
-		stepCount = stepCount + 1
-		if stepCount == 0 {
-			jump = jump + 1
-			stepCount = currMaxReach - start
+	lastIdx := len(arr) - 1
+	for i := len(arr) - 2; i >= 0; i-- {
+		if i+arr[i] >= lastIdx {
+			lastIdx = i
 		}
 	}
- 	return jump + 1
+	return lastIdx == 0
 }
 
 //function minJumps(arr , n)
@@ -74,4 +57,3 @@ func getMinimumJump(arr []int) int {
 //
 //// driver program to test above function
 //var arr = [ 1, 3, 6, 1, 0, 9 ];
-

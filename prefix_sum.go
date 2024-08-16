@@ -15,6 +15,7 @@ func main() {
 		sumWArr[i] = (i + 1) * (sumWArr[i-1] + arr[i])
 	}
 	fmt.Println("sumWArr", sumWArr)
+	fmt.Println("sumArr", sumArr)
 	sum := getSum(sumArr, 0, 2)
 	fmt.Println("sum:", sum)
 	sum = getSum(sumArr, 2, 6)
