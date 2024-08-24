@@ -18,12 +18,10 @@ func squareAndSort(arr []int) {
 	//
 	for index := len(arr) - 1; index >= 0; index-- {
 		if math.Abs(float64(arr[left])) > float64(arr[right]) {
-			temp = append(temp, arr[left]*arr[left])
-			fmt.Println("=====temp====", temp)
+			temp[index] = arr[left] * arr[left]
 			left++
 		} else {
-			temp = append(temp, arr[right]*arr[right])
-			fmt.Println("=====temp1111====", temp)
+			temp[index] = arr[right] * arr[right]
 			right--
 		}
 	}

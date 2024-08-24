@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	arr := []int{2, 4, 1, 3, 5}
@@ -44,7 +46,6 @@ func countAndMerge(arr []int, start, mid, end int) int {
 		}
 		k++
 	}
-
 	for left < n1 {
 		arr[k] = newArr[left]
 		left++
