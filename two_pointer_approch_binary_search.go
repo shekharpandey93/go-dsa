@@ -45,7 +45,7 @@ func triplateSum(arr []int, x int) bool {
 	for i := 0; i < len(arr)-2; i++ {
 		val := isPair(arr, x-arr[0], i+1)
 		fmt.Println("return val", val, x-arr[i], i+1)
-		if isPair(arr, x-arr[0], i+1) {
+		if isPair(arr, x-arr[i], i+1) {
 			return true
 		}
 	}

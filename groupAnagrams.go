@@ -1,7 +1,7 @@
 package main
 
-func main()  {
-	strs := []string{"eat","tea","tan","ate","nat","bat"}
+func main() {
+	strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
 	groupAnagrams(strs)
 }
 
@@ -23,15 +23,15 @@ func groupAnagrams(strs []string) [][]string {
 
 	groups := map[[26]int][]string{}
 	for _, str := range strs {
-		var occ [26]int   // chars a-z mapped to occurance count
+		var occ [26]int // chars a-z mapped to occurance count
 		for _, char := range str {
-			occ[int(char) - int('a')]++
+			occ[int(char)-int('a')]++
 		}
 		// update or create groups
 		if _, ok := groups[occ]; ok {
 			groups[occ] = append(groups[occ], str)
 		} else {
-			groups[occ] = []string{ str }
+			groups[occ] = []string{str}
 		}
 	}
 	result := [][]string{}

@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	//getAllDivisorNumber(100)
-	getAllDivisorNumberSorted(15)
+	getAllDivisorNumber(100)
+	//getAllDivisorNumberSorted(15)
 }
 
 func getAllDivisorNumber(num int) {
