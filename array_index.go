@@ -8,20 +8,24 @@ import (
 // [3,2,1,0,4]
 // [3,1,2,0,4]
 func main() {
-	arr := []int{3, 1, 2, 0, 4}
+	arr := []int{2, 3, 1, 1, 4}
 	a := getMinimumJump(arr)
 	fmt.Println(a)
 }
 
-func getMinimumJump(arr []int) bool {
-
+func getMinimumJump(arr []int) int {
+	if len(arr) == 1 {
+		return 0
+	}
 	lastIdx := len(arr) - 1
+	jump := 0
 	for i := len(arr) - 2; i >= 0; i-- {
 		if i+arr[i] >= lastIdx {
 			lastIdx = i
+			jump++
 		}
 	}
-	return lastIdx == 0
+	return jump
 }
 
 //function minJumps(arr , n)

@@ -5,13 +5,11 @@ import (
 	"sync"
 )
 
-// Function to check if a number is prime
 func isPrimeVal(num int) bool {
 	if num == 1 {
 		return false
 	}
 	if num == 2 || num == 3 {
-		fmt.Println(num)
 		return true
 	}
 	if num%2 == 0 || num%3 == 0 {
@@ -21,12 +19,10 @@ func isPrimeVal(num int) bool {
 		if num%idx == 0 || num%(idx+2) == 0 {
 			return false
 		}
-		fmt.Println(idx)
 	}
 	return true
 }
 
-// Function to generate prime numbers up to a limit and send them through a channel
 func generatePrimes(limit int, primeChan chan int, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for num := 2; num <= limit; num++ {
@@ -34,7 +30,6 @@ func generatePrimes(limit int, primeChan chan int, wg *sync.WaitGroup) {
 			primeChan <- num
 		}
 	}
-	close(primeChan) // Close the channel after all primes are sent
 }
 func printPrimeVal(primeChan chan int) {
 	for prime := range primeChan {

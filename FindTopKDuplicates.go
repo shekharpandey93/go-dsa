@@ -18,7 +18,6 @@ func CountDuplicates(nums []int) map[int]int {
 func FindTopKDuplicates(nums []int, k int) []int {
 	// Count occurrences
 	count := CountDuplicates(nums)
-
 	// Create a slice of pairs (num, frequency) for duplicates
 	var duplicates [][2]int
 	for num, freq := range count {
@@ -26,7 +25,6 @@ func FindTopKDuplicates(nums []int, k int) []int {
 			duplicates = append(duplicates, [2]int{num, freq})
 		}
 	}
-
 	// Sort duplicates by frequency (descending) and then by number (ascending)
 	sort.Slice(duplicates, func(i, j int) bool {
 		if duplicates[i][1] == duplicates[j][1] {
@@ -34,7 +32,6 @@ func FindTopKDuplicates(nums []int, k int) []int {
 		}
 		return duplicates[i][1] > duplicates[j][1]
 	})
-
 	// Get top k duplicates
 	result := make([]int, 0, k)
 	for i := 0; i < k && i < len(duplicates); i++ {
@@ -46,7 +43,7 @@ func FindTopKDuplicates(nums []int, k int) []int {
 
 func main() {
 	nums := []int{3, 1, 4, 4, 5, 2, 6, 1, 3, 3, 3, 2}
-	k := 2
+	k := 3
 
 	topK := FindTopKDuplicates(nums, k)
 	fmt.Printf("Top %d duplicates: %v\n", k, topK)
