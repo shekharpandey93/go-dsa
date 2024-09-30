@@ -11,7 +11,7 @@ import (
 func main() {
 
 	//url := "https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1&categoryId=165793011"
-	url := "https://stgobain-dev2-fra-core-api.multicloud-ibm.com/api/v1/aiops/inventory/resources/list/view"
+	url := "https://<>/api/v1/aiops/inventory/resources/list/view"
 	payload := strings.NewReader(`{
 "page": 1,
 "size": 10,
